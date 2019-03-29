@@ -1,0 +1,9 @@
+---
+
+version: "3"
+
+services:
+  app:
+    image: node:8.15.1-alpine
+    volumes:
+      - .:/app
