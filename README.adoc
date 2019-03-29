@@ -1,0 +1,38 @@
+= textlint
+
+----
+$ npm i --save-dev textlint
+$ npm i --save-dev textlint-rule-max-ten textlint-rule-spellcheck-tech-word textlint-rule-no-mix-dearu-desumasu
+----
+
+* 使い方
+** docs/sample_01.mdのチェック
+*** 方法1(引数多いやーつ、多くなるやつ)
++
+----
+$ node_modules/.bin/textlint --rule no-mix-dearu-desumasu --rule max-ten --rule spellcheck-tech-word docs/sample_01.md
+----
+
+*** 方法2(.textlintrcにruleを書いて、コマンド実行)
++
+[source, json]
+.".textlintrc"
+----
+{
+  "rules": {
+    "max-ten": {
+      "max": 3
+    },
+    "spellcheck-tech-word": true,
+    "no-mix-dearu-desumasu": true
+  }
+}
+----
++
+----
+$ node_modules/.bin/textlint docs/sample_01.md
+----
+
+== LICENSE
+* Source code: image:https://img.shields.io/badge/SourceCode-MIT-blue.svg[MIT, link="LICENSE"]
+* Text: CC BY-NC 4.0 image:https://i.creativecommons.org/l/by-nc/4.0/88x31.png[CC BY-NC 4.0,link="https://creativecommons.org/licenses/by-nc/4.0/"]
